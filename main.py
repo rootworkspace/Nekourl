@@ -9,7 +9,9 @@ import starlette.status as status
 from sqlalchemy import create_engine, String, Text, DateTime, Boolean, event
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker, Session
 import validators
+from pathlib import Path
 
+Path("database").mkdir(parents=True, exist_ok=True)
 engine = create_engine("sqlite:///./database/nekourl.db", connect_args={"check_same_thread": False})
 
 # Database
